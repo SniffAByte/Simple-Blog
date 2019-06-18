@@ -22,6 +22,9 @@ export default {
     },
     components: {
         Post
+    },
+    head: {
+        title: 'Blog Posts'
     }
 }
 </script>

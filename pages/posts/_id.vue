@@ -20,6 +20,11 @@ export default {
     },
     components: {
         Post
+    },
+    head(){
+        return {
+            title: this.post.title
+        }
     }
 }
 </script>
