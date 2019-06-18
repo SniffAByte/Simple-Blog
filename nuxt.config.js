@@ -51,5 +51,8 @@ export default {
     */
     extend(config, ctx) {
     }
-  }
+  },
+  css: [
+    '@/assets/sass/style.scss'
+  ]
 }

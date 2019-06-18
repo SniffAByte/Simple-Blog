@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .post {
+        max-width: 1000px;
+        padding: 20px 0;
+        border-bottom: 1px solid #CCC;
+        &:last-of-type {
+            border: none;
+        }
+    }
+}
