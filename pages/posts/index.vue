@@ -1,11 +1,13 @@
 <template>
     <div>
-        <p>{{ posts }}</p>   
+        <post v-for="post in posts" :key="post.id" :post="post" />
     </div>    
 </template>
 
 <script>
 import axios from 'axios';
+import Post from '@/components/Post.vue';
+
 export default {
     data() {
         return {
@@ -17,6 +19,9 @@ export default {
         return {
             posts: res.data
         }
+    },
+    components: {
+        Post
     }
 }
 </script>
