@@ -25,7 +25,8 @@ export default {
     },
     head: {
         title: 'Blog Posts'
-    }
+    },
+    layout: 'posts'
 }
 </script>
 
