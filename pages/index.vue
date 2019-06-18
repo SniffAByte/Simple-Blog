@@ -1,5 +1,8 @@
 <template>
-    <p>Home page</p>
+    <div class="text-center">
+        <p>Home page</p>
+        <nuxt-link :to="{ name: 'posts' }">Posts</nuxt-link>
+    </div>
 </template>
 
 <script>
