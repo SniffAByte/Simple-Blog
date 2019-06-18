@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <post v-for="post in posts" :key="post.id" :post="post" />
-    </div>    
+    <post :post="post" />
 </template>
 
 <script>
@@ -11,13 +9,13 @@ import Post from '@/components/Post.vue';
 export default {
     data() {
         return {
-            posts: []
+            post: null
         }
     },
-    async asyncData() {
-        let res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    async asyncData({ params }) {
+        let response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
         return {
-            posts: res.data
+            post: response.data
         }
     },
     components: {
@@ -25,4 +23,3 @@ export default {
     }
 }
 </script>
-
