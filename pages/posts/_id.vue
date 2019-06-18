@@ -12,10 +12,17 @@ export default {
             post: null
         }
     },
-    async asyncData({ params }) {
-        let response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
-        return {
-            post: response.data
+    async asyncData({ params, error }) {
+        try {
+            let response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
+            return {
+                post: response.data
+            }
+        } catch (e) {
+            error({
+                statusCode: e.response.status,
+                message: `This page couldn't be found`
+            });
         }
     },
     components: {
